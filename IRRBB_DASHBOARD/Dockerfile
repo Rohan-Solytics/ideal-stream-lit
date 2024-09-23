@@ -13,7 +13,7 @@ RUN pip3 install -r requirements.txt
  
 EXPOSE 8501
  
-COPY . /run
+COPY .IRRBB_DASHBOARD/ /run/
  
 RUN aws configure set aws_access_key_id $ACCESS_KEY_ID \
 && aws configure set aws_secret_access_key $SECRET_ACCESS_KEY \

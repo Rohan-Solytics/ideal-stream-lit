@@ -5,7 +5,6 @@ ARG ACCESS_KEY_ID
 ARG SECRET_ACCESS_KEY
 WORKDIR /run 
 COPY requirements.txt ./requirements.txt 
-RUN pip install git+https://SolyticsdevOps:${TOKEN}@github.com/Nuva-Org/SolyticsUtilsPackage.git@sprint14 
 RUN pip3 install -r requirements.txt
 EXPOSE 8501
 COPY . /run 

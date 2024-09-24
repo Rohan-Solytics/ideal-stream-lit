@@ -8,11 +8,11 @@ image:
   repository: 842928376651.dkr.ecr.ap-south-1.amazonaws.com/nimbus-streamlit
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ''
+  tag: ""
 
 imagePullSecrets: []
-nameOverride: stream1
-fullnameOverride: stream1
+nameOverride: "streamlit-stream"
+fullnameOverride: "streamlit-stream"
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -22,7 +22,7 @@ serviceAccount:
   annotations: {}
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
-  name: ''
+  name: ""
 
 podAnnotations: {}
 podLabels: {}
@@ -46,30 +46,29 @@ service:
 
 ingress:
   enabled: true
-  className: alb
+  className: "alb"
   annotations:
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/group.name: nimbus-dev-streamlit
     alb.ingress.kubernetes.io/load-balancer-name: nimbus-dev-streamlit
     alb.ingress.kubernetes.io/healthcheck-path: /
-    alb.ingress.kubernetes.io/success-codes: 200-299
+    alb.ingress.kubernetes.io/success-codes: '200-299'
     alb.ingress.kubernetes.io/healthcheck-port: traffic-port
     alb.ingress.kubernetes.io/healthcheck-interval-seconds: '15'
     alb.ingress.kubernetes.io/healthcheck-timeout-seconds: '5'
     alb.ingress.kubernetes.io/subnets: subnet-07b56c94d6a2070e8, subnet-0dd2603b99fa5cc7e,
       subnet-01ba189aa6d8f1452
-    alb.ingress.kubernetes.io/certificate-arn: 
-      arn:aws:acm:ap-south-1:842928376651:certificate/b1b8db04-88ac-494f-a8ce-b97d47584509
+    alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:ap-south-1:842928376651:certificate/b1b8db04-88ac-494f-a8ce-b97d47584509"
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443},{"HTTP":80}]'
-    alb.ingress.kubernetes.io/force-ssl-redirect: 'true'
+    alb.ingress.kubernetes.io/force-ssl-redirect: "true"
     alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect", "RedirectConfig":
       { "Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
   hosts:
-  - host: stream.solytics.us
-    paths:
-    - path: /*
-      pathType: ImplementationSpecific
+    - host: stream.solytics.us
+      paths:
+        - path: /*
+          pathType: ImplementationSpecific
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
@@ -104,20 +103,17 @@ volumeMounts: []
 #   readOnly: true
 
 nodeSelector:
-  Environment: Dev
-  Project: Nimbus
+  Environment: "Dev"
+  Project: "Nimbus"
 
 tolerations:
-- key: Environment
-  operator: Equal
-  value: Dev
-  effect: NoSchedule
-- key: Project
-  operator: Equal
-  value: Nimbus
-  effect: NoSchedule
+  - key: "Environment"
+    operator: "Equal"
+    value: "Dev"
+    effect: "NoSchedule"
+  - key: "Project"
+    operator: "Equal"
+    value: "Nimbus"
+    effect: "NoSchedule"
 
 affinity: {}
-certificateArn: arn:aws:acm:ap-south-1:842928376651:certificate/2791516d-1ec2-4a18-bad9-c1b6685dbf4422
-  arn:aws:acm:ap-south-1:842928376651:certificate/2791516d-1ec2-4a18-bad9-c1b6685dbf4422
-host: stream11.solytics.us

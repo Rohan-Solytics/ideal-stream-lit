@@ -5,14 +5,14 @@
 replicaCount: 1
 
 image:
-  repository: 842928376651.dkr.ecr.ap-south-1.amazonaws.com/nimbus-streamlit
+  repository: 842928376651.dkr.ecr.ap-south-1.amazonaws.com/nimbus-stream11111lit
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
 
 imagePullSecrets: []
-nameOverride: "stream"
-fullnameOverride: "stream"
+nameOverride: "stream11111"
+fullnameOverride: "stream11111"
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -50,8 +50,8 @@ ingress:
   annotations:
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/group.name: nimbus-dev-streamlit
-    alb.ingress.kubernetes.io/load-balancer-name: nimbus-dev-streamlit
+    alb.ingress.kubernetes.io/group.name: nimbus-dev-stream11111lit
+    alb.ingress.kubernetes.io/load-balancer-name: nimbus-dev-stream11111lit
     alb.ingress.kubernetes.io/healthcheck-path: /
     alb.ingress.kubernetes.io/success-codes: '200-299'
     alb.ingress.kubernetes.io/healthcheck-port: traffic-port
@@ -59,13 +59,13 @@ ingress:
     alb.ingress.kubernetes.io/healthcheck-timeout-seconds: '5'
     alb.ingress.kubernetes.io/subnets: subnet-07b56c94d6a2070e8, subnet-0dd2603b99fa5cc7e,
       subnet-01ba189aa6d8f1452
-    alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:ap-south-1:842928376651:certificate/2791516d-1ec2-4a18-bad9-c1b6685dbf22"
+    alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:ap-south-1:842928376651:certificate/2791516d-1ec2-4a18-bad9-c1b6685dbf4422"
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443},{"HTTP":80}]'
     alb.ingress.kubernetes.io/force-ssl-redirect: "true"
     alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect", "RedirectConfig":
       { "Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
   hosts:
-    - host: stream.solytics.us
+    - host: stream11111.solytics.us
       paths:
         - path: /*
           pathType: ImplementationSpecific

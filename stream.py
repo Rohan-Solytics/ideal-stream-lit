@@ -44,3 +44,6 @@ def main():
         model = train_model()  
         species = classify_iris(model, st.session_state.sepal_length, st.session_state.sepal_width, st.session_state.petal_length, st.session_state.petal_width)
         st.success(f"The Iris is predicted to be a {species}")
+        
+if __name__ == "__main__":
+    main()

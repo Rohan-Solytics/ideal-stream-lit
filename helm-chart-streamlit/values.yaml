@@ -118,6 +118,6 @@ tolerations:
   effect: NoSchedule
 
 affinity: {}
-certificateArn: 
+certificateArn: arn:aws:acm:ap-south-1:842928376651:certificate/2791516d-1ec2-4a18-bad9-c1b6685dbf4422
   arn:aws:acm:ap-south-1:842928376651:certificate/2791516d-1ec2-4a18-bad9-c1b6685dbf4422
 host: stream11.solytics.us

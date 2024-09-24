@@ -11,8 +11,8 @@ image:
   tag: ""
 
 imagePullSecrets: []
-nameOverride: "streamlit-stream"
-fullnameOverride: "streamlit-stream"
+nameOverride: stream1
+fullnameOverride: stream1
 
 serviceAccount:
   # Specifies whether a service account should be created

@@ -11,8 +11,8 @@ image:
   tag: ""
 
 imagePullSecrets: []
-nameOverride: "streamlit-stream"
-fullnameOverride: "streamlit-stream"
+nameOverride: "streamlit-stream8"
+fullnameOverride: "streamlit-stream8"
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -59,13 +59,13 @@ ingress:
     alb.ingress.kubernetes.io/healthcheck-timeout-seconds: '5'
     alb.ingress.kubernetes.io/subnets: subnet-07b56c94d6a2070e8, subnet-0dd2603b99fa5cc7e,
       subnet-01ba189aa6d8f1452
-    alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:ap-south-1:842928376651:certificate/b1b8db04-88ac-494f-a8ce-b97d47584509"
+    alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:ap-south-1:842928376651:certificate/7ce78b07-1ca9-485d-839d-8ce2543e3cad"
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443},{"HTTP":80}]'
     alb.ingress.kubernetes.io/force-ssl-redirect: "true"
     alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect", "RedirectConfig":
       { "Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
   hosts:
-    - host: stream.solytics.us
+    - host: stream8.solytics.us
       paths:
         - path: /*
           pathType: ImplementationSpecific
